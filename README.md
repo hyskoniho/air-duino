@@ -73,6 +73,31 @@ O <b>air-duino</b> é um projeto acadêmico inovador que utiliza a poderosa plac
 
 ---
 
+## 🌐 Frontend de Monitoramento
+
+Um painel web responsivo foi desenvolvido para visualização gráfica e tabular das medições coletadas pelo ESP32.
+
+### 🔗 Acesso
+- Deploy (Railway): https://primary-production-638b.up.railway.app/webhook/history-sensor
+
+### 🖥️ Recursos Principais
+- Navegação por abas: "Painel Gráfico" (visual) e "Tabela Completa" (histórico detalhado)
+- Gráficos interativos em tempo real com Chart.js:
+	- Temperatura vs. Umidade (eixos duplos)
+	- Gases Industriais: CO₂ e CO
+	- Amônia (NH₃)
+	- VOCs: Álcool, Benzeno, Acetona
+- Tabela histórica com: temperatura, umidade, CO₂, CO, NH₃, VOCs, leitura bruta (ADC), resistência calculada e status geral
+- Badges de estado (qualidade do ar): Bom / PERIGO
+
+### 📊 Exemplo de Estrutura dos Dados
+Os dados exibidos derivam do backend e seguem colunas como:
+```
+ID, timestamp, temperatura, umidade, ppm_co2, ppm_co, ppm_nh3, alcool_ppm, benzeno_ppm, acetona_ppm, adc_raw, resistencia_kohms, aqi_status
+```
+
+---
+
 ## 📝 Instalação e Execução
 
 1. <b>Monte o circuito</b> conforme o diagrama em <code>wokwi/diagram.json</code>.
